@@ -1,3 +1,4 @@
+from ast import literal_eval
 import sys
 
 # dictionary of names
@@ -695,10 +696,6 @@ with open(sys.argv[1], 'r') as myfile:
 
 try:
     lex.input(code)
-    # while True:
-    #     token = lex.token()
-    #     if not token: break
-    #     print(token)
     root = yacc.parse(code)
     root.evaluate()
 
